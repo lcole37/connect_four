@@ -37,40 +37,24 @@ RSpec.describe Board do
 
   it "Can get user input" do
     board = Board.new(7, 6)
-    board.create_board
+    #board.create_board
     expect(board.get_user_input(:A)).to eq("You selected A")
+  end
 
-    #   # {
-    #   A: ["X", ".", ".", ".", ".", "."],
-    #   B: [".", ".", ".", ".", ".", "."],
-    #   C: [".", ".", ".", ".", ".", "."],
-    #   D: [".", ".", ".", ".", ".", "."],
-    #   E: [".", ".", ".", ".", ".", "."],
-    #   F: [".", ".", ".", ".", ".", "."],
-    #   G: [".", ".", ".", ".", ".", "."]
-    # })
+  it "Can place a piece" do
+    board = Board.new(7, 6)
+    board = {
+      A: [".", ".", ".", ".", ".", "X"],
+      B: [".", ".", ".", ".", ".", "."],
+      C: [".", ".", ".", ".", ".", "."],
+      D: [".", ".", ".", ".", ".", "."],
+      E: [".", ".", ".", ".", ".", "."],
+      F: [".", ".", ".", ".", ".", "."],
+      G: [".", ".", ".", ".", ".", "."]
+    }
 
+    expect(board[:A][-1]).to eq("X")
   end
 
 
 end
-# expect(board.create_board).to eq([
-#   [nil, nil, nil, nil, nil, nil],
-#   [nil, nil, nil, nil, nil, nil],
-#   [nil, nil, nil, nil, nil, nil],
-#   [nil, nil, nil, nil, nil, nil],
-#   [nil, nil, nil, nil, nil, nil],
-#   [nil, nil, nil, nil, nil, nil],
-#   [nil, nil, nil, nil, nil, nil]])
-#
-#   board = Board.new(7,6)
-#   board.create_board
-#   board.place_chip
-#   expect(board).to eq([
-#     ["X", nil, nil, nil, nil, nil],
-#     [nil, nil, nil, nil, nil, nil],
-#     [nil, nil, nil, nil, nil, nil],
-#     [nil, nil, nil, nil, nil, nil],
-#     [nil, nil, nil, nil, nil, nil],
-#     [nil, nil, nil, nil, nil, nil],
-#     [nil, nil, nil, nil, nil, nil]])
