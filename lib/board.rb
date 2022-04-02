@@ -27,42 +27,29 @@ class Board
 
   def get_user_input(letter)
     p "Select a column A - G"
-    user_input = gets.chomp
+    user_input = gets.chomp.upcase
     if letter == :A
       p "You selected A"
     end
   end
 
 
-  # def place_piece()
-  #
-  #   #
-  #   # end
-  #   # elsif user_input == :B
-  #   # end
-  #   # elsif user_input == :C
-  #   # end
-  #   end
-  # end
+  def place_piece
+    if board[:A]
+
+    if user_input == :A
+      if board[:A][-1] == "."
+          board[:A][-1] == "X"
+        elsif board[:A][-1] != "."
+          puts "Sorry! Invalid column selection"
+        end
+      end
+    end
+  end
 end
 
 
-#
-# def place_chip
-#   p "Enter letter A through G"
-#   board = Board.new(@columns, @rows)
-#   board[0[0]] == "X"
-#   board
-# user_input = gets.chomp
-# user_input.upcase
-# if user_input == "A"
-# elsif
-#
-# elsif
-#board.new
-#puts board.print_welcome
-#put these in main menu file to display welcome and empty board
-
+#below lines to run in runner file?
 #board = Board.new
 #board.create_board
 #p board.create_board
