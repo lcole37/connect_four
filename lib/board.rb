@@ -1,12 +1,12 @@
+require 'pry'
 class Board
-  attr_reader :print_board, :welcome, :columns, :rows, :board
+  attr_reader :print_board, :welcome, :columns, :rows
 
   def initialize(columns, rows)
     @print_board = "ABCDEF\n.......\n.......\n.......\n.......\n.......\n......."
     @welcome = "Welcome to CONNECT FOUR!"
     @columns = columns
     @rows = rows
-    @board = board
   end
 
   def print_welcome
@@ -14,14 +14,43 @@ class Board
   end
 
   def create_board
-    board = []
-    @columns.times do
-      board << Array.new(@rows)
+    board = {
+      A: [".", ".", ".", ".", ".", "."],
+      B: [".", ".", ".", ".", ".", "."],
+      C: [".", ".", ".", ".", ".", "."],
+      D: [".", ".", ".", ".", ".", "."],
+      E: [".", ".", ".", ".", ".", "."],
+      F: [".", ".", ".", ".", ".", "."],
+      G: [".", ".", ".", ".", ".", "."]
+    }
+  end
+
+  def place_piece
+    p "Select a spot A-G"
+    user_input = gets.chomp
+    if user_input == :A
+
     end
-    board
+    elsif user_input == :B
+    end
+    elsif user_input == :C
+    end
   end
 end
 
+
+#
+# def place_chip
+#   p "Enter letter A through G"
+#   board = Board.new(@columns, @rows)
+#   board[0[0]] == "X"
+#   board
+# user_input = gets.chomp
+# user_input.upcase
+# if user_input == "A"
+# elsif
+#
+# elsif
 #board.new
 #puts board.print_welcome
 #put these in main menu file to display welcome and empty board

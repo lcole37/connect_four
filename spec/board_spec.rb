@@ -24,23 +24,51 @@ RSpec.describe Board do
 
   it "can create a board" do
     board = Board.new(7, 6)
-    expect(board.create_board).to eq([
-      [nil, nil, nil, nil, nil, nil],
-      [nil, nil, nil, nil, nil, nil],
-      [nil, nil, nil, nil, nil, nil],
-      [nil, nil, nil, nil, nil, nil],
-      [nil, nil, nil, nil, nil, nil],
-      [nil, nil, nil, nil, nil, nil],
-      [nil, nil, nil, nil, nil, nil]])
+    expect(board.create_board).to eq({
+      A: [".", ".", ".", ".", ".", "."],
+      B: [".", ".", ".", ".", ".", "."],
+      C: [".", ".", ".", ".", ".", "."],
+      D: [".", ".", ".", ".", ".", "."],
+      E: [".", ".", ".", ".", ".", "."],
+      F: [".", ".", ".", ".", ".", "."],
+      G: [".", ".", ".", ".", ".", "."]
+    })
     end
 
-  it "can get user input to place a chip" do
+  xit "Can place chip in a board" do
     board = Board.new(7, 6)
-
-    expect(board.place_chip)
-
+    board.create_board
+    expect(board.place_piece).to eq({
+      A: ["X", ".", ".", ".", ".", "."],
+      B: [".", ".", ".", ".", ".", "."],
+      C: [".", ".", ".", ".", ".", "."],
+      D: [".", ".", ".", ".", ".", "."],
+      E: [".", ".", ".", ".", ".", "."],
+      F: [".", ".", ".", ".", ".", "."],
+      G: [".", ".", ".", ".", ".", "."]
+    })
 
   end
 
 
 end
+# expect(board.create_board).to eq([
+#   [nil, nil, nil, nil, nil, nil],
+#   [nil, nil, nil, nil, nil, nil],
+#   [nil, nil, nil, nil, nil, nil],
+#   [nil, nil, nil, nil, nil, nil],
+#   [nil, nil, nil, nil, nil, nil],
+#   [nil, nil, nil, nil, nil, nil],
+#   [nil, nil, nil, nil, nil, nil]])
+#
+#   board = Board.new(7,6)
+#   board.create_board
+#   board.place_chip
+#   expect(board).to eq([
+#     ["X", nil, nil, nil, nil, nil],
+#     [nil, nil, nil, nil, nil, nil],
+#     [nil, nil, nil, nil, nil, nil],
+#     [nil, nil, nil, nil, nil, nil],
+#     [nil, nil, nil, nil, nil, nil],
+#     [nil, nil, nil, nil, nil, nil],
+#     [nil, nil, nil, nil, nil, nil]])
