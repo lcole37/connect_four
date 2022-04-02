@@ -25,17 +25,25 @@ class Board
     }
   end
 
-  def place_piece
-    p "Select a spot A-G"
+  def get_user_input(letter)
+    p "Select a column A - G"
     user_input = gets.chomp
-    if user_input == :A
-
-    end
-    elsif user_input == :B
-    end
-    elsif user_input == :C
+    if letter == :A
+      p "You selected A"
     end
   end
+
+
+  # def place_piece()
+  #
+  #   #
+  #   # end
+  #   # elsif user_input == :B
+  #   # end
+  #   # elsif user_input == :C
+  #   # end
+  #   end
+  # end
 end
 
 
