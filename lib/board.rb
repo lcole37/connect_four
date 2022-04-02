@@ -1,14 +1,12 @@
 require 'pry'
 class Board
-  attr_reader :print_board, :welcome, :columns, :rows, :board
+  attr_reader :print_board, :welcome, :columns, :rows
 
   def initialize(columns, rows)
     @print_board = "ABCDEF\n.......\n.......\n.......\n.......\n.......\n......."
     @welcome = "Welcome to CONNECT FOUR!"
-
     @columns = columns
     @rows = rows
-    @board = board
   end
 
   def print_welcome
@@ -25,6 +23,18 @@ class Board
       F: [".", ".", ".", ".", ".", "."],
       G: [".", ".", ".", ".", ".", "."]
     }
+  end
+
+  def place_piece
+    p "Select a spot A-G"
+    user_input = gets.chomp
+    if user_input == :A
+
+    end
+    elsif user_input == :B
+    end
+    elsif user_input == :C
+    end
   end
 end
 

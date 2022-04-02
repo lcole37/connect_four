@@ -22,13 +22,31 @@ RSpec.describe Board do
     expect(board.print_welcome).to eq("Welcome to CONNECT FOUR!\n\nABCDEF\n.......\n.......\n.......\n.......\n.......\n.......")
   end
 
-  xit "can create a board" do
+  it "can create a board" do
     board = Board.new(7, 6)
-
+    expect(board.create_board).to eq({
+      A: [".", ".", ".", ".", ".", "."],
+      B: [".", ".", ".", ".", ".", "."],
+      C: [".", ".", ".", ".", ".", "."],
+      D: [".", ".", ".", ".", ".", "."],
+      E: [".", ".", ".", ".", ".", "."],
+      F: [".", ".", ".", ".", ".", "."],
+      G: [".", ".", ".", ".", ".", "."]
+    })
     end
 
   xit "Can place chip in a board" do
-
+    board = Board.new(7, 6)
+    board.create_board
+    expect(board.place_piece).to eq({
+      A: ["X", ".", ".", ".", ".", "."],
+      B: [".", ".", ".", ".", ".", "."],
+      C: [".", ".", ".", ".", ".", "."],
+      D: [".", ".", ".", ".", ".", "."],
+      E: [".", ".", ".", ".", ".", "."],
+      F: [".", ".", ".", ".", ".", "."],
+      G: [".", ".", ".", ".", ".", "."]
+    })
   end
 
 
