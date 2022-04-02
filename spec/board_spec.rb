@@ -33,4 +33,14 @@ RSpec.describe Board do
       [nil, nil, nil, nil, nil, nil],
       [nil, nil, nil, nil, nil, nil]])
     end
+
+  it "can get user input to place a chip" do
+    board = Board.new(7, 6)
+
+    expect(board.place_chip)
+
+
+  end
+
+
 end
