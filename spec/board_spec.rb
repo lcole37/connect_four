@@ -22,15 +22,34 @@ RSpec.describe Board do
     expect(board.print_welcome).to eq("Welcome to CONNECT FOUR!\n\nABCDEF\n.......\n.......\n.......\n.......\n.......\n.......")
   end
 
-  it "can create a board" do
+  xit "can create a board" do
     board = Board.new(7, 6)
-    expect(board.create_board).to eq([
-      [nil, nil, nil, nil, nil, nil],
-      [nil, nil, nil, nil, nil, nil],
-      [nil, nil, nil, nil, nil, nil],
-      [nil, nil, nil, nil, nil, nil],
-      [nil, nil, nil, nil, nil, nil],
-      [nil, nil, nil, nil, nil, nil],
-      [nil, nil, nil, nil, nil, nil]])
+
     end
+
+  xit "Can place chip in a board" do
+
+  end
+
+
 end
+# expect(board.create_board).to eq([
+#   [nil, nil, nil, nil, nil, nil],
+#   [nil, nil, nil, nil, nil, nil],
+#   [nil, nil, nil, nil, nil, nil],
+#   [nil, nil, nil, nil, nil, nil],
+#   [nil, nil, nil, nil, nil, nil],
+#   [nil, nil, nil, nil, nil, nil],
+#   [nil, nil, nil, nil, nil, nil]])
+#
+#   board = Board.new(7,6)
+#   board.create_board
+#   board.place_chip
+#   expect(board).to eq([
+#     ["X", nil, nil, nil, nil, nil],
+#     [nil, nil, nil, nil, nil, nil],
+#     [nil, nil, nil, nil, nil, nil],
+#     [nil, nil, nil, nil, nil, nil],
+#     [nil, nil, nil, nil, nil, nil],
+#     [nil, nil, nil, nil, nil, nil],
+#     [nil, nil, nil, nil, nil, nil]])
