@@ -14,7 +14,7 @@ class Board
   end
 
   def create_board
-    board = {
+    @board = {
         A: [".", ".", ".", ".", ".", "."],
         B: [".", ".", ".", ".", ".", "."],
         C: [".", ".", ".", ".", ".", "."],
@@ -36,14 +36,14 @@ class Board
   #def invalid input??
 
   def display_board
-    board.new
-    board.keys.join
-    index = 5
-    6.times do
-      puts board[:A][index] + board[:B][index] + board[:C][index] + board[:D][index] + board[:E][index] + board[:F][index] + board[:G][index]
-      index -= 1
-    end
-    puts display_board
+    # board.new
+    @board.keys.join
+    # index = 5
+    # 6.times do
+    #   puts board[:A][index] + board[:B][index] + board[:C][index] + board[:D][index] + board[:E][index] + board[:F][index] + board[:G][index]
+    #   index -= 1
+    # end
+    # puts display_board
   end
 
 

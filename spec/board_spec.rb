@@ -46,28 +46,35 @@ RSpec.describe Board do
     expect(board.get_user_input("H")).to eq("That's not a column!")
   end
 
-  xit "Can display board" do
+  it "Can display keys of a board" do
     board = Board.new
-    board = {
-      A: [".", ".", ".", ".", ".", "."],
-      B: [".", ".", ".", ".", ".", "."],
-      C: [".", ".", ".", ".", ".", "."],
-      D: [".", ".", ".", ".", ".", "."],
-      E: [".", ".", ".", ".", ".", "."],
-      F: [".", ".", ".", ".", ".", "."],
-      G: [".", ".", ".", ".", ".", "."]
-    }
-
-    expect(board.keys.join).to eq("ABCDEFG")
-    expect(board.display_board).to eq("ABCDEF
-                                      .......
-                                      .......
-                                      .......
-                                      .......
-                                      .......
-                                      .......")
-
+    board.create_board
+    
+    expect(board.display_board).to eq("ABCDEFG")
   end
+
+  # xit "Can display board" do
+  #   board = Board.new
+  #   board = {
+  #     A: [".", ".", ".", ".", ".", "."],
+  #     B: [".", ".", ".", ".", ".", "."],
+  #     C: [".", ".", ".", ".", ".", "."],
+  #     D: [".", ".", ".", ".", ".", "."],
+  #     E: [".", ".", ".", ".", ".", "."],
+  #     F: [".", ".", ".", ".", ".", "."],
+  #     G: [".", ".", ".", ".", ".", "."]
+  #   }
+  #
+  #   expect(board.keys.join).to eq("ABCDEFG")
+  #   expect(board.display_board).to eq("ABCDEF
+  #                                     .......
+  #                                     .......
+  #                                     .......
+  #                                     .......
+  #                                     .......
+  #                                     .......")
+  #
+  # end
 
   it "Can place a piece" do
     board = Board.new
