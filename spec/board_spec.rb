@@ -8,7 +8,7 @@ RSpec.describe Board do
     expect(board).to be_an_instance_of(Board)
   end
 
-  it "can create a empty board" do
+  it "can create a display board" do
     board = Board.new
 
     expect(board.print_board).to eq("ABCDEF\n.......\n.......\n.......\n.......\n.......\n.......")
@@ -49,7 +49,7 @@ RSpec.describe Board do
   it "Can display keys of a board" do
     board = Board.new
     board.create_board
-    
+
     expect(board.display_board).to eq("ABCDEFG")
   end
 
