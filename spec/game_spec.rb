@@ -32,6 +32,14 @@ RSpec.describe Game do
 
   end
 
+  it "can start a new game" do
+    game = Game.new
+
+    expect(game.start).to eq("Welcome to CONNECT FOUR!\n\nABCDEF\n.......\n.......\n.......\n.......\n.......\n.......")
+  end
+
+
+
 
 
 

@@ -17,9 +17,9 @@ require './lib/board'
 class Game
   attr_reader :gameboard
 
-def initialize
-  @gameboard = gameboard
-end
+  def initialize
+    @gameboard = gameboard
+  end
 
  def gameboard
    board = Board.new
@@ -28,28 +28,16 @@ end
  end
 
  def start
-   print welcome
-   get input
-   
+   board = Board.new
+   board.print_welcome
+   get_user_input
  end
 
+  def get_user_input
+    p "Select column A - G"
+    user_input = gets.chomp
+    user_input.upcase
+    if user_input != "A" || "B" || "C" || "D" || "E" || "F" || "G"
+    p "That's not a column!"
+  end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-# def get_user_input(letter) #this method can live in game file we think!
-#   p "Select column A - G"
-#   letter.upcase
-#   if letter != "A" || "B" || "C" || "D" || "E" || "F" || "G"
-#     p "That's not a column!"
-#   end
