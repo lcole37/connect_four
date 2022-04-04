@@ -27,14 +27,14 @@ class Board
 
   def get_user_input(letter)
     p "Select column A - G"
-    user_input = gets.chomp.upcase
+    user_input = gets.chomp #for future use
+    user_input.upcase
     if letter != "A" || "B" || "C" || "D" || "E" || "F" || "G"
       p "That's not a column!"
     end
   end
 
   def display_board
-    # board.new
     puts @board.keys.join
     index = 5
     6.times do
@@ -45,17 +45,15 @@ class Board
   end
 
 
-  def place_piece(letter)
+  def place_piece(user_input)
     # array = [:A, :B, :C, :D, :E, :F, :G]
     # VVV use this later to iterate through VVV
 
-
-
-    user_input.to_sym
+    # user_input.to_sym  #for future use
 
     if user_input == :A
-      if board[:A][5] == "."
-        board[:A][5] = "X"
+      if @board[:A][5] == "."
+        @board[:A][5] = "X"
       elsif board[:A][4] == "."
         board[:A][4] = "X"
       elsif board[:A][3] == "."
@@ -172,5 +170,6 @@ class Board
         puts "Sorry! Selected column is full"
       end
     end
+    @board
   end
 end
