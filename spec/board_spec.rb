@@ -56,9 +56,10 @@ RSpec.describe Board do
                      :D=>[".", ".", ".", ".", ".", "."],
                      :E=>[".", ".", ".", ".", ".", "."],
                      :F=>[".", ".", ".", ".", ".", "."],
-                     :G=>[".", ".", ".", ".", ".", "."]}
-    # expect(board.display_board).to eq("ABCDEFG\n.......\n.......\n.......\n.......\n.......\n.......")
-    expect(board.display_board).to eq(expected_hash) #hard coded test to pass. command prints as it should
+                     :G=>[".", ".", ".", ".", ".", "."]
+                    }
+
+    expect(board.display_board).to eq(expected_hash)
   end
 
   it "Can place a piece" do
@@ -70,70 +71,4 @@ RSpec.describe Board do
 
     expect(board.display_board[:B][5]).to eq("X")
   end
-
-  #   # board = {
-  #   #   A: [".", ".", ".", ".", ".", "X"],
-  #   #   B: [".", ".", ".", ".", ".", "."],
-  #   #   C: [".", ".", ".", ".", ".", "."],
-  #   #   D: [".", ".", ".", ".", ".", "."],  for visual purposes
-  #   #   E: [".", ".", ".", ".", ".", "."],
-  #   #   F: [".", ".", ".", ".", ".", "."],
-  #   #   G: [".", ".", ".", ".", ".", "."]
-  #   # }
-
-
-  # xit "Can display board" do
-  #   board = Board.new
-  #   board = {
-  #     A: [".", ".", ".", ".", ".", "."],
-  #     B: [".", ".", ".", ".", ".", "."],
-  #     C: [".", ".", ".", ".", ".", "."],
-  #     D: [".", ".", ".", ".", ".", "."],
-  #     E: [".", ".", ".", ".", ".", "."],
-  #     F: [".", ".", ".", ".", ".", "."],
-  #     G: [".", ".", ".", ".", ".", "."]
-  #   }
-  #
-  #   expect(board.keys.join).to eq("ABCDEFG")
-  #   expect(board.display_board).to eq("ABCDEF
-  #                                     .......
-  #                                     .......
-  #                                     .......
-  #                                     .......
-  #                                     .......
-  #                                     .......")
-  #
-  # end
-  #
-  # it "Can place a piece" do
-  #   board = Board.new
-  #   user_input = :A
-  #   board = {
-  #     A: [".", ".", ".", ".", ".", "X"],
-  #     B: [".", ".", ".", ".", ".", "."],
-  #     C: [".", ".", ".", ".", ".", "."],
-  #     D: [".", ".", ".", ".", ".", "."],
-  #     E: [".", ".", ".", ".", ".", "."],
-  #     F: [".", ".", ".", ".", ".", "."],
-  #     G: [".", ".", ".", ".", ".", "."]
-  #   }
-  #
-  #   expect(board[:A][5]).to eq("X")
-  # end
-  #
-  #   it "Can place a piece in a different column" do
-  #     board = Board.new
-  #     user_input = :B
-  #     board = {
-  #       A: [".", ".", ".", ".", ".", "."],
-  #       B: [".", ".", ".", ".", ".", "X"],
-  #       C: [".", ".", ".", ".", ".", "."],
-  #       D: [".", ".", ".", ".", ".", "."],
-  #       E: [".", ".", ".", ".", ".", "."],
-  #       F: [".", ".", ".", ".", ".", "."],
-  #       G: [".", ".", ".", ".", ".", "."]
-  #     }
-  #
-  #     expect(board[:B][5]).to eq("X")
-  #   end
 end

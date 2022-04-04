@@ -1,12 +1,11 @@
 require 'pry'
 class Board
-  attr_reader :print_board, :welcome #, #:columns, :rows
+  attr_reader :print_board, :welcome
 
   def initialize
     @print_board = "ABCDEF\n.......\n.......\n.......\n.......\n.......\n......."
     @welcome = "Welcome to CONNECT FOUR!"
-    # @columns = columns
-    # @rows = rows
+
   end
 
   def print_welcome
@@ -170,6 +169,5 @@ class Board
         puts "Sorry! Selected column is full"
       end
     end
-    @board
   end
 end
