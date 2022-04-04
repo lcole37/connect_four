@@ -30,14 +30,15 @@ class Game
  def start
    board = Board.new
    board.print_welcome
-   get_user_input
+   #get_user_input
  end
 
-  def get_user_input
-    p "Select column A - G"
-    user_input = gets.chomp
-    user_input.upcase
-    if user_input != "A" || "B" || "C" || "D" || "E" || "F" || "G"
-    p "That's not a column!"
-  end
+  # def get_user_input
+  #   p "Select column A - G"
+  #   user_input = gets.chomp
+  #   user_input.upcase
+  #   if user_input != "A" || "B" || "C" || "D" || "E" || "F" || "G"
+  #     p "That's not a column!"
+  #   end
+  # end
 end
