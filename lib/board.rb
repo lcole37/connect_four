@@ -28,28 +28,28 @@ class Board
   def get_user_input(letter)
     p "Select column A - G"
     user_input = gets.chomp.upcase
-      if letter != "A" || "B" || "C" || "D" || "E" || "F" || "G"
-        p "That's not a column!"
+    if letter != "A" || "B" || "C" || "D" || "E" || "F" || "G"
+      p "That's not a column!"
     end
   end
-
-  #def invalid input??
 
   def display_board
     # board.new
-    @board.keys.join
+    puts @board.keys.join
     index = 5
     6.times do
-      puts board[:A][index] + board[:B][index] + board[:C][index] + board[:D][index] + board[:E][index] + board[:F][index] + board[:G][index]
+      puts @board[:A][index] + @board[:B][index] + @board[:C][index] + @board[:D][index] + @board[:E][index] + @board[:F][index] + @board[:G][index]
       index -= 1
     end
-    puts display_board
+    # puts display_board
   end
 
 
-  def place_piece
+  def place_piece(letter)
     # array = [:A, :B, :C, :D, :E, :F, :G]
     # VVV use this later to iterate through VVV
+
+
 
     user_input.to_sym
 
@@ -174,10 +174,3 @@ class Board
     end
   end
 end
-
-
-
-#below lines to run in runner file?
-#board = Board.new
-#board.create_board
-#p board.create_board

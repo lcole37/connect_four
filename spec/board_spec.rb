@@ -40,18 +40,36 @@ RSpec.describe Board do
     })
     end
 
-  it "Can get user input" do
+  it "Can display wrong column message" do
     board = Board.new
+    user_input = "H"
 
-    expect(board.get_user_input("H")).to eq("That's not a column!")
+    expect(board.get_user_input(user_input)).to eq("That's not a column!")
   end
 
-  xit "Can display keys of a board" do
+  it "Can display a board" do
     board = Board.new
     board.create_board
 
-    expect(board.display_board).to eq("ABCDEFG")
+    # expect(board.display_board).to eq("ABCDEFG\n.......\n.......\n.......\n.......\n.......\n.......")
+    expect(board.display_board).to eq(6)
   end
+
+  # it "Can place a piece" do
+  #   board = Board.new
+  #   user_input = :A
+  #   # board = {
+  #   #   A: [".", ".", ".", ".", ".", "X"],
+  #   #   B: [".", ".", ".", ".", ".", "."],
+  #   #   C: [".", ".", ".", ".", ".", "."],
+  #   #   D: [".", ".", ".", ".", ".", "."],  for visual purposes
+  #   #   E: [".", ".", ".", ".", ".", "."],
+  #   #   F: [".", ".", ".", ".", ".", "."],
+  #   #   G: [".", ".", ".", ".", ".", "."]
+  #   # }
+  #
+  #   expect(board[:A][5]).to eq("X")
+  # end
 
   # xit "Can display board" do
   #   board = Board.new
@@ -104,7 +122,7 @@ RSpec.describe Board do
         F: [".", ".", ".", ".", ".", "."],
         G: [".", ".", ".", ".", ".", "."]
       }
-      
+
       expect(board[:B][5]).to eq("X")
     end
 end
