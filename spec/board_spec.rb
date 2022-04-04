@@ -46,7 +46,7 @@ RSpec.describe Board do
     expect(board.get_user_input("H")).to eq("That's not a column!")
   end
 
-  it "Can display keys of a board" do
+  xit "Can display keys of a board" do
     board = Board.new
     board.create_board
 
@@ -88,7 +88,7 @@ RSpec.describe Board do
       F: [".", ".", ".", ".", ".", "."],
       G: [".", ".", ".", ".", ".", "."]
     }
-    #expect(board.place_piece).to eq(:A)
+
     expect(board[:A][5]).to eq("X")
   end
 
@@ -104,8 +104,7 @@ RSpec.describe Board do
         F: [".", ".", ".", ".", ".", "."],
         G: [".", ".", ".", ".", ".", "."]
       }
+      
       expect(board[:B][5]).to eq("X")
     end
-
-
 end
