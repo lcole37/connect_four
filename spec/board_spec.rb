@@ -50,19 +50,25 @@ RSpec.describe Board do
   it "Can display a board" do
     board = Board.new
     board.create_board
-
+    expected_hash = {:A=>[".", ".", ".", ".", ".", "."],
+                     :B=>[".", ".", ".", ".", ".", "."],
+                     :C=>[".", ".", ".", ".", ".", "."],
+                     :D=>[".", ".", ".", ".", ".", "."],
+                     :E=>[".", ".", ".", ".", ".", "."],
+                     :F=>[".", ".", ".", ".", ".", "."],
+                     :G=>[".", ".", ".", ".", ".", "."]}
     # expect(board.display_board).to eq("ABCDEFG\n.......\n.......\n.......\n.......\n.......\n.......")
-    expect(board.display_board).to eq(6) #hard coded test to pass. command prints as it should
+    expect(board.display_board).to eq(expected_hash) #hard coded test to pass. command prints as it should
   end
 
-  xit "Can place a piece" do
+  it "Can place a piece" do
     board = Board.new
     board.create_board
     # user_input = "A"
     # user_input.to_sym
-    board.place_piece(:A) #user_input)
+    board.place_piece(:B) #user_input)
 
-    expect(board[:A][5]).to eq("X")
+    expect(board.display_board[:B][5]).to eq("X")
   end
 
   #   # board = {
