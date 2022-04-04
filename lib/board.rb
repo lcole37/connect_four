@@ -1,12 +1,12 @@
 require 'pry'
 class Board
-  attr_reader :print_board, :welcome, :columns, :rows
+  attr_reader :print_board, :welcome #, #:columns, :rows
 
   def initialize
     @print_board = "ABCDEF\n.......\n.......\n.......\n.......\n.......\n......."
     @welcome = "Welcome to CONNECT FOUR!"
-    @columns = columns
-    @rows = rows
+    # @columns = columns
+    # @rows = rows
   end
 
   def print_welcome
@@ -27,35 +27,33 @@ class Board
 
   def get_user_input(letter)
     p "Select column A - G"
-    user_input = gets.chomp.upcase
-      if letter != "A" || "B" || "C" || "D" || "E" || "F" || "G"
-        p "That's not a column!"
+    user_input = gets.chomp #for future use
+    user_input.upcase
+    if letter != "A" || "B" || "C" || "D" || "E" || "F" || "G"
+      p "That's not a column!"
     end
   end
-
-  #def invalid input??
 
   def display_board
-    # board.new
-    @board.keys.join
-    index = 5
+    puts @board.keys.join
+    index = 0
     6.times do
-      puts board[:A][index] + board[:B][index] + board[:C][index] + board[:D][index] + board[:E][index] + board[:F][index] + board[:G][index]
-      index -= 1
+      puts @board[:A][index] + @board[:B][index] + @board[:C][index] + @board[:D][index] + @board[:E][index] + @board[:F][index] + @board[:G][index]
+      index += 1
     end
-    puts display_board
+    @board
   end
 
 
-  def place_piece
+  def place_piece(user_input)
     # array = [:A, :B, :C, :D, :E, :F, :G]
     # VVV use this later to iterate through VVV
 
-    user_input.to_sym
+    # user_input.to_sym  #for future use
 
     if user_input == :A
-      if board[:A][5] == "."
-        board[:A][5] = "X"
+      if @board[:A][5] == "."
+        @board[:A][5] = "X"
       elsif board[:A][4] == "."
         board[:A][4] = "X"
       elsif board[:A][3] == "."
@@ -71,8 +69,8 @@ class Board
       end
 
     elsif user_input == :B
-      if board[:B][5] == "."
-        board[:B][5] = "X"
+      if @board[:B][5] == "."
+        @board[:B][5] = "X"
       elsif board[:B][4] == "."
         board[:B][4] = "X"
       elsif board[:B][3] == "."
@@ -172,12 +170,6 @@ class Board
         puts "Sorry! Selected column is full"
       end
     end
+    @board
   end
 end
-
-
-
-#below lines to run in runner file?
-#board = Board.new
-#board.create_board
-#p board.create_board
