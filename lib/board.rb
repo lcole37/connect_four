@@ -196,8 +196,8 @@ class Board
       end
 
     elsif computer_selection == :B
-      if @@board[:B][5] == "."
-        @@board[:B][5] = "O"
+      if @board[:B][5] == "."
+        @board[:B][5] = "O"
       elsif @board[:B][4] == "."
         @board[:B][4] = "O"
       elsif @board[:B][3] == "."

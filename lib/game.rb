@@ -1,19 +1,49 @@
 require 'pry'
 require './lib/board'
-
 #notes section
-call welcome + print empty board
-call board (Board.new + board.create_board, board display board)
-start a game (Enter p to play, q to quit -- if q, loop back to main menu/runner -- if p, go on to place piece)
-(get user input THIS IS WHERE THIS ACTUALLY HAPPENS
-user_input = gets.chomp)
+# call welcome + print empty board
+# call board (Board.new + board.create_board, board display board)
+# start a game (Enter p to play, q to quit -- if q, loop back to main menu/runner -- if p, go on to place piece)
+# (get user input THIS IS WHERE THIS ACTUALLY HAPPENS
+# user_input = gets.chomp)
+#
+# use user input to call method to place piece
+# display board after piece is placed
+#
+# after user turn, then copy paste adjust logic for computer turn(randomize choosing of column)
+#
+# repeat (loop)
 
-use user input to call method to place piece
-display board after piece is placed
+class Game
+  attr_reader :gameboard
 
-after user turn, then copy paste adjust logic for computer turn(randomize choosing of column)
+def initialize
+  @gameboard = gameboard
+end
 
-repeat (loop)
+ def gameboard
+   board = Board.new
+   board.create_board
+   board.display_board
+ end
+
+ def start
+   print welcome
+   get input
+   
+ end
+
+end
+
+
+
+
+
+
+
+
+
+
 
 
 
