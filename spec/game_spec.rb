@@ -46,15 +46,13 @@ RSpec.describe Game do
     expect().to eq()
   end
 
+  it "Can place a piece" do
+    board = Board.new
+    # board.columns
+    # user_input = "A"
+    # user_input.to_sym
+    board.place_piece(:B) #user_input
 
-
-
-
-
-
-
-
-
-
-
+    expect(@board[:B][5]).to eq("X")
+  end
 end
