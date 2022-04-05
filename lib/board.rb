@@ -1,17 +1,9 @@
 require 'pry'
 class Board
-  attr_reader :welcome
+  attr_reader :columns
 
   def initialize
-    @welcome = "Welcome to CONNECT FOUR!"
-  end
-
-  def print_welcome
-    puts "#{welcome}"
-  end
-
-  def create_board
-    @board = {
+    @columns = {
         A: [".", ".", ".", ".", ".", "."],
         B: [".", ".", ".", ".", ".", "."],
         C: [".", ".", ".", ".", ".", "."],
@@ -23,16 +15,17 @@ class Board
   end
 
   def display_board
-    puts @board.keys.join
+    puts @columns.keys.join
     index = 0
     6.times do
-      puts @board[:A][index] + @board[:B][index] + @board[:C][index] + @board[:D][index] + @board[:E][index] + @board[:F][index] + @board[:G][index]
+      puts @columns[:A][index] + @columns[:B][index] + @columns[:C][index] + @columns[:D][index] + @columns[:E][index] + @columns[:F][index] + @columns[:G][index]
       index += 1
     end
-    @board
+    @columns
   end
 
   def place_piece(user_input)
+    #should go in player, computer class
     # array = [:A, :B, :C, :D, :E, :F, :G]
     # VVV use this later to iterate through VVV
 

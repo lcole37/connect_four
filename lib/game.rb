@@ -15,27 +15,46 @@ require './lib/board'
 # repeat (loop)
 
 class Game
-  attr_reader :gameboard
+  attr_reader :welcome, :board
 
   def initialize
-    # @gameboard = gameboard
+      @welcome = "Welcome to CONNECT FOUR! Enter p to play, q to quit!"
+      @board = Board.new
+      # @player = Player.new(@board)
+      # @computer = Computer.new(@board)
   end
 
- def gameboard
-   board = Board.new
-   board.create_board
-   board.display_board
+ def main_menu
+   puts @welcome
+   @board.display_board
+
  end
+  def quit
+    puts "Bummer for you!"
+    main_menu
+  end
+
 
  def start
-   board = Board.new
-   board.print_welcome
-   self.gameboard
-   puts "Enter a column A-G"
-   user_input = gets.chomp.upcase
-   if user_input != "A" || "B" || "C" || "D" || "E" || "F" || "G"
-     p "That's not a column!"
-   end
+   main_menu
+   user_input = gets.chomp.downcase
+    if user_input == "p"
+      turn #player.place_piece
+    else
+      main_menu
+    end
+ end
+
+
+
+ #   def method here if they choose to play
+ #   puts "Enter a column A-G"
+ #   user_input = gets.chomp.upcase
+ #   #actually should this be p to play q to quit
+ #   if user_input != "A" || "B" || "C" || "D" || "E" || "F" || "G"
+ #     p "That's not a column!"
+ #   end
+ # end
    #this doesn't work correctly, yet!
  end
 
@@ -49,4 +68,3 @@ class Game
 #       p "That's not a column!"
 #     end
 #   end
-end
