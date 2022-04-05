@@ -32,11 +32,21 @@ RSpec.describe Game do
 
   end
 
-  it "can start a new game" do
+  it "can print a welcome message" do
     game = Game.new
+    board = Board.new
 
-    expect(game.start).to eq("Welcome to CONNECT FOUR!\n\nABCDEF\n.......\n.......\n.......\n.......\n.......\n.......")
+    expect(game.welcome).to eq("Welcome to CONNECT FOUR! Enter p to play, q to quit!")
   end
+
+  it "check for valid input" do
+    game = Game.new
+    board = Board.new
+
+    expect().to eq()
+  end
+
+
 
 
 
