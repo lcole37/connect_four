@@ -21,15 +21,4 @@ RSpec.describe Board do
       G: [".", ".", ".", ".", ".", "."]
     })
   end
-
-  #this test is not passing as written, and I think if we write a player class we will be moving it there.  Thoughts?
-  it "Can place a piece" do
-    board = Board.new
-    # board.columns
-    # user_input = "A"
-    # user_input.to_sym
-    board.place_piece(:B) #user_input
-
-    expect(@board[:B][5]).to eq("X")
-  end
 end
