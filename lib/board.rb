@@ -1,15 +1,13 @@
 require 'pry'
 class Board
-  attr_reader :print_board, :welcome
+  attr_reader :welcome
 
   def initialize
-    @print_board = "ABCDEF\n.......\n.......\n.......\n.......\n.......\n......."
     @welcome = "Welcome to CONNECT FOUR!"
-
   end
 
   def print_welcome
-    "#{welcome}\n\n" + "#{print_board}"
+    puts "#{welcome}"
   end
 
   def create_board
@@ -24,14 +22,6 @@ class Board
       }
   end
 
-  # def get_user_input(letter) #this method may move to game as we didn't test or use it in this file
-  #   p "Select column A - G"
-  #   letter.upcase
-  #   if letter != "A" || "B" || "C" || "D" || "E" || "F" || "G"
-  #     p "That's not a column!"
-  #   end
-  # end
-
   def display_board
     puts @board.keys.join
     index = 0
@@ -41,7 +31,6 @@ class Board
     end
     @board
   end
-
 
   def place_piece(user_input)
     # array = [:A, :B, :C, :D, :E, :F, :G]

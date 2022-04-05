@@ -18,7 +18,7 @@ class Game
   attr_reader :gameboard
 
   def initialize
-    @gameboard = gameboard
+    # @gameboard = gameboard
   end
 
  def gameboard
@@ -30,15 +30,23 @@ class Game
  def start
    board = Board.new
    board.print_welcome
-   #get_user_input
+   self.gameboard
+   puts "Enter a column A-G"
+   user_input = gets.chomp.upcase
+   if user_input != "A" || "B" || "C" || "D" || "E" || "F" || "G"
+     p "That's not a column!"
+   end
+   #this doesn't work correctly, yet!
  end
 
-  # def get_user_input
-  #   p "Select column A - G"
-  #   user_input = gets.chomp
-  #   user_input.upcase
-  #   if user_input != "A" || "B" || "C" || "D" || "E" || "F" || "G"
-  #     p "That's not a column!"
-  #   end
-  # end
+ #Invalid column selection method?
+
+#   def get_user_input
+#     p "Select column A - G"
+#     user_input = gets.chomp
+#     user_input.upcase
+#     if user_input != "A" || "B" || "C" || "D" || "E" || "F" || "G"
+#       p "That's not a column!"
+#     end
+#   end
 end
