@@ -24,39 +24,54 @@ class Game
       # @computer = Computer.new(@board)
   end
 
- def main_menu
+  def main_menu
    puts @welcome
    @board.display_board
+  end
 
- end
   def quit
     puts "Bummer for you!"
     main_menu
   end
 
-
- def start
+  def start
    main_menu
-   user_input = gets.chomp.downcase
+   user_input = gets.chomp
+   user_input.downcase
     if user_input == "p"
-      turn #player.place_piece
+      #play, repeat starts here
+      #(user_turn)
+
+      @board.place_piece(user_turn)
+      @board.display_board
+      #@board.check_win?
+      #if true break
+      #else continue
+      @board.computer_turn
+      @board.display_board
+      # @board.check_win?
+      #if true break
+      #else repeat to line 45
     else
       main_menu
     end
- end
+  end
 
 
 
- #   def method here if they choose to play
- #   puts "Enter a column A-G"
- #   user_input = gets.chomp.upcase
- #   #actually should this be p to play q to quit
- #   if user_input != "A" || "B" || "C" || "D" || "E" || "F" || "G"
- #     p "That's not a column!"
- #   end
- # end
+  def user_turn
+    puts "Enter a column A-G"
+    user_input = gets.chomp
+    user_input.upcase
+   #actually should this be p to play q to quit (this is on 21)
+    if user_input != "A" || "B" || "C" || "D" || "E" || "F" || "G"
+      p "That's not a column!"
+    else
+      # return user_input  for next, or combine with place piece
+    end
+  end
    #this doesn't work correctly, yet!
- end
+end
 
  #Invalid column selection method?
 
