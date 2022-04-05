@@ -4,4 +4,7 @@
 
 Place **four chips in a row** to win!  
 
-Add runner/main menu file instructions here, or above? 
+From your command line, please run:
+`ruby ./lib/connect_four.rb`
+
+Can you beat the computer?  __GOOD LUCK__!
