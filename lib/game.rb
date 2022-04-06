@@ -39,10 +39,15 @@ class Game
    user_input = gets.chomp.downcase
    # user_input.downcase
     if user_input == "p"
-      #play, repeat starts here
-      #(user_turn)
+      p "Enter Column A-G"
 
-      user_turn = gets.chomp 
+      user_input = gets.chomp
+      input = user_input.upcase.to_sym
+      if input != :A && input != :B && input != :C && input != :D && input != :E && input != :F && input != :G
+        p "Invalid column"
+        start
+      end
+      user_turn(input)
       @board.display_board
       #@board.check_win?
       #if true break
@@ -61,14 +66,15 @@ class Game
 
 
 
-  def user_turn(user_input)
-    puts "Enter a column A-G"
-    user_input = gets.chomp
-    user_input.upcase
-    user_input.to_sym
-    if user_input != :A || :B || :C || :D || :E || :F || :G
-    #   p "That's not a column!" #loops back to select column
-    if user_input == :A
+  def user_turn(input)
+
+    # user_input = gets.chomp
+    # user_input.upcase
+    input = user_input.upcase.to_sym
+    # if input != :A || :B || :C || :D || :E || :F || :G
+    #   return nil
+    # end
+    if input == :A
       if @board[:A][5] == "."
         @board[:A][5] = "X"
       elsif @board[:A][4] == "."
@@ -86,7 +92,7 @@ class Game
         #prompt user to choose different column, loop back to user input
       end
 
-    elsif user_input == :B
+    elsif input == :B
       if @board[:B][5] == "."
         @board[:B][5] = "X"
       elsif @board[:B][4] == "."
@@ -103,7 +109,7 @@ class Game
         puts "Sorry! Selected column is full"
       end
 
-    elsif user_input == :C
+    elsif input == :C
       if @board[:C][5] == "."
         @board[:C][5] = "X"
       elsif @board[:C][4] == "."
@@ -120,7 +126,7 @@ class Game
         puts "Sorry! Selected column is full"
       end
 
-    elsif user_input == :D
+    elsif input == :D
       if @board[:D][5] == "."
         @board[:D][5] = "X"
       elsif @board[:D][4] == "."
@@ -137,7 +143,7 @@ class Game
         puts "Sorry! Selected column is full"
       end
 
-    elsif user_input == :E
+    elsif input == :E
       if @board[:E][5] == "."
         @board[:E][5] = "X"
       elsif @board[:E][4] == "."
@@ -154,7 +160,7 @@ class Game
         puts "Sorry! Selected column is full"
       end
 
-    elsif user_input == :F
+    elsif input == :F
       if @board[:F][5] == "."
         @board[:F][5] = "X"
       elsif @board[:F][4] == "."
@@ -171,7 +177,7 @@ class Game
         puts "Sorry! Selected column is full"
       end
 
-    elsif user_input == :G
+    elsif input == :G
       if @board[:G][5] == "."
         @board[:G][5] = "X"
       elsif @board[:G][4] == "."
@@ -190,15 +196,15 @@ class Game
     end
   end
 end
-end   #this doesn't work correctly, yet!
+  #this doesn't work correctly, yet!
 
 
  #Invalid column selection method?
 
 #   def get_user_input
 #     p "Select column A - G"
-#     user_input = gets.chomp
-#     user_input.upcase
+#     input = gets.chomp
+#     input.upcase
 #     if user_input != "A" || "B" || "C" || "D" || "E" || "F" || "G"
 #       p "That's not a column!"
 #     end
