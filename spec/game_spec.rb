@@ -16,9 +16,11 @@ RSpec.describe Game do
     expect(game).to be_an_instance_of(Game)
   end
 
-  it "can initialize a playable gameboard" do
+#don't think we need this, it's tested in board
+  xit "can initialize a playable gameboard" do
     game = Game.new
-    expected_hash = {
+    board = Board.new
+    @columns = {
         A: [".", ".", ".", ".", ".", "."],
         B: [".", ".", ".", ".", ".", "."],
         C: [".", ".", ".", ".", ".", "."],
@@ -28,7 +30,7 @@ RSpec.describe Game do
         G: [".", ".", ".", ".", ".", "."]
       }
 
-    expect(game.gameboard).to eq(expected_hash)
+    expect(game.board).to eq(@columns)
 
   end
 
@@ -39,7 +41,7 @@ RSpec.describe Game do
     expect(game.welcome).to eq("Welcome to CONNECT FOUR! Enter p to play, q to quit!")
   end
 
-  it "check for valid input" do
+  xit "check for valid input" do
     game = Game.new
     board = Board.new
 
@@ -47,12 +49,13 @@ RSpec.describe Game do
   end
 
   it "Can place a piece" do
+    game = Game.new
     board = Board.new
-    # board.columns
-    # user_input = "A"
-    # user_input.to_sym
-    board.place_piece(:B) #user_input
+    user_input = "B"
+    user_input.to_sym
+    game.user_turn(:B)
 
-    expect(@board[:B][5]).to eq("X")
+    expect(game[:B][5]).to eq("X")
   end
+
 end
