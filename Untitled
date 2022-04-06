@@ -72,3 +72,6 @@ RSpec.describe Board do
     expect(board.display_board[:B][5]).to eq("X")
   end
 end
+
+
+#last day ideas:  move computer turn to it's own file? array.sample? for computer choice method? 
