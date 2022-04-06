@@ -1,18 +1,4 @@
-require 'pry'
 require './lib/board'
-#notes section
-# call welcome + print empty board
-# call board (Board.new + board.create_board, board display board)
-# start a game (Enter p to play, q to quit -- if q, loop back to main menu/runner -- if p, go on to place piece)
-# (get user input THIS IS WHERE THIS ACTUALLY HAPPENS
-# user_input = gets.chomp)
-#
-# use user input to call method to place piece
-# display board after piece is placed
-#
-# after user turn, then copy paste adjust logic for computer turn(randomize choosing of column)
-#
-# repeat (loop)
 
 class Game
   attr_reader :welcome, :board
@@ -20,8 +6,6 @@ class Game
   def initialize
       @welcome = "Welcome to CONNECT FOUR! Enter p to play, q to quit!"
       @board = Board.new
-      # @player = Player.new(@board)
-      # @computer = Computer.new(@board)
   end
 
   def main_menu
@@ -37,10 +21,8 @@ class Game
   def start
    main_menu
    user_input = gets.chomp.downcase
-   # user_input.downcase
     if user_input == "p"
       p "Enter Column A-G"
-
       user_input = gets.chomp
       input = user_input.upcase.to_sym
       if input != :A && input != :B && input != :C && input != :D && input != :E && input != :F && input != :G
@@ -49,14 +31,8 @@ class Game
       end
       user_turn(input)
       @board.display_board
-      #@board.check_win?
-      #if true break
-      #else continue
       @board.computer_turn
       @board.display_board
-      # @board.check_win?
-      #if true break
-      #else repeat to line 45
     elsif user_input == "q"
       quit
     else
@@ -64,16 +40,8 @@ class Game
     end
   end
 
-
-
-  def user_turn(input)
-
-    # user_input = gets.chomp
-    # user_input.upcase
+  def user_turn(user_input)
     input = user_input.upcase.to_sym
-    # if input != :A || :B || :C || :D || :E || :F || :G
-    #   return nil
-    # end
     if input == :A
       if @board[:A][5] == "."
         @board[:A][5] = "X"
@@ -89,7 +57,6 @@ class Game
         @board[:A][0] = "X"
       else
         puts "Sorry! Selected column is full"
-        #prompt user to choose different column, loop back to user input
       end
 
     elsif input == :B
@@ -196,26 +163,8 @@ class Game
     end
   end
 end
-  #this doesn't work correctly, yet!
-
-
- #Invalid column selection method?
-
-#   def get_user_input
-#     p "Select column A - G"
-#     input = gets.chomp
-#     input.upcase
-#     if user_input != "A" || "B" || "C" || "D" || "E" || "F" || "G"
-#       p "That's not a column!"
-#     end
-#   end
-
-#---------------------------------------------------
-
 
   def computer_turn
-    #computer_selection random method, will need to loop back once column is full, do not display error message, way to remove symbol from array after column is full?
-
     if computer_selection == :A
       if @board[:A][5] == "."
         @board[:A][5] = "O"
@@ -230,7 +179,6 @@ end
       elsif @board[:A][0] == "."
         @board[:A][0] = "O"
       else
-        #return to random selection loop
       end
 
     elsif computer_selection == :B
@@ -247,7 +195,6 @@ end
       elsif @board[:B][0] == "."
         @board[:B][0] = "O"
       else
-        #return to random selection loop
       end
 
     elsif computer_selection == :C
@@ -264,7 +211,6 @@ end
       elsif @board[:C][0] == "."
         @board[:C][0] = "O"
       else
-        #return to random selection loop
       end
 
     elsif computer_selection == :D
@@ -281,7 +227,6 @@ end
       elsif @board[:D][0] == "."
         @board[:D][0] = "O"
       else
-        #return to random selection loop
       end
 
     elsif computer_selection == :E
@@ -298,7 +243,6 @@ end
       elsif @board[:E][0] == "."
         @board[:E][0] = "O"
       else
-        #return to random selection loop
       end
 
     elsif computer_selection == :F
@@ -315,7 +259,6 @@ end
       elsif @board[:F][0] == "."
         @board[:F][0] = "O"
       else
-        #return to random selection method
       end
 
     elsif computer_selection == :G
@@ -331,8 +274,6 @@ end
         @board[:G][1] = "O"
       elsif @board[:G][0] == "."
         @board[:G][0] = "O"
-      else
-        #return to random selection method UNLESS board full
       end
     end
   end
